@@ -1,1 +1,0 @@
-# random-palindrome-array

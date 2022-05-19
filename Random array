@@ -1,0 +1,40 @@
+# random-palindrome-array
+XYZ shopping mall wants to distribute lucky coupon for its customers. Each lucky coupon has some
+prize amount. The mall executive wants to pick 100 order numbers randomly. The order number lies 
+between 1000 and 9999. Design a java application which helps the executive to determine the winners 
+of lucky coupon. The customer is winner if order number is palindrome and if it belongs to those 100 
+randomly picked one.
+Program
+import java.util.Random;
+public class Array {
+ public static void main(String args[]) {
+ int min = 1000; 
+ int max = 9999; 
+ int ordernum[] = new int[100];
+ Random r = new Random();
+ for(int i =0; i<100;i++)
+ {
+ ordernum[i] = r.nextInt((max - min) + 1) + min;
+ }
+ for(int i=0; i < ordernum.length; i++)
+ {
+ int number = ordernum[i];
+ int reversedNumber = 0;
+ int temp=0;
+ while(number > 0)
+ {
+ temp = number % 10;
+ number = number / 10;
+ reversedNumber = reversedNumber * 10 + temp;
+ }
+ if(ordernum[i] == reversedNumber)
+ System.out.println("The customer with order number"+" "+ordernum[i]+" "+ "won the lucky 
+coupon");
+ 
+ }
+ }
+}
+Output
+The customer with order number 4224 won the lucky coupon
+The customer with order number 8888 won the lucky coupon
+2. Mr Ram has gathered the requirements of sports accessories for Team A and 
